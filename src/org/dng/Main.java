@@ -86,14 +86,14 @@ public class Main {
         System.out.println(" 8. Случилась инфляция, необходимо увеличить стоимость всех авто на 20%");
         System.out.println("list of cars before price rising");
         carList.forEach(print);
-        carList.forEach(c -> c.changeCost(20));
+        carList.stream().forEach(c -> c.changeCost(20));
         System.out.println("\nlist of cars after price rising");
         carList.forEach(print);
 
         System.out.println("\n 9. Случилось снижение инфляции, необходимо снизить стоимость всех авто на 20%");
         System.out.println("Cost of car before rising price by 20% and price after decreasing by 20% is not equal! \n" +
                 "Because in second case the base from which the percentage is calculated is higher!");
-        carList.forEach(c -> c.changeCost(-20));
+        carList.stream().forEach(c -> c.changeCost(-20));
         System.out.println("\nlist of cars after price falling");
         carList.forEach(print);
 
