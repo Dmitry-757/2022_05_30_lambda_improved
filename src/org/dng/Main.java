@@ -43,8 +43,10 @@ public class Main {
                 .forEach(print);
         System.out.println();
 
-        System.out.println(" 6. Отсортировать список автомобилей по цене и мощности (автомобили с одной ценой сортировались по мощности).\n" +
-                "    Вывести результат на экран.\n");
+        System.out.println("""
+                 6. Отсортировать список автомобилей по цене и мощности (автомобили с одной ценой сортировались по мощности).
+                    Вывести результат на экран.
+                """);
         carList.stream()
 //                .sorted()//use native comparator which is defined in class Car
                 .sorted(new Comparator<Car>() { //let`s use anonymous class
@@ -86,14 +88,14 @@ public class Main {
         System.out.println(" 8. Случилась инфляция, необходимо увеличить стоимость всех авто на 20%");
         System.out.println("list of cars before price rising");
         carList.forEach(print);
-        carList.stream().forEach(c -> c.changeCost(20));
+        carList.forEach(c -> c.changeCost(20));
         System.out.println("\nlist of cars after price rising");
         carList.forEach(print);
 
         System.out.println("\n 9. Случилось снижение инфляции, необходимо снизить стоимость всех авто на 20%");
         System.out.println("Cost of car before rising price by 20% and price after decreasing by 20% is not equal! \n" +
                 "Because in second case the base from which the percentage is calculated is higher!");
-        carList.stream().forEach(c -> c.changeCost(-20));
+        carList.forEach(c -> c.changeCost(-20));
         System.out.println("\nlist of cars after price falling");
         carList.forEach(print);
 
